@@ -1,4 +1,4 @@
-name: gh-pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -10,28 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Out
-        uses: actions/checkout@v2.4.0
-        with:
-          persist-credentials: false
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.x'
-
-      - name: Installing Dependencies
-        run: npm ci
-
-      - name: Linting
-        run: npm run lint
-
-      - name: Building
-        run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          folder: ./build
-          branch: gh-pages
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build  # Путь к папке build в ветке main
+        publish_branch: gh-pages
