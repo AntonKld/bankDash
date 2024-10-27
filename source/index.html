@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-slace=1">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/inter-400.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/inter-500.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/inter-600.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/inter-700.woff2" as="font" crossorigin="anonymous">
+  <title>Test</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="main-header__wrapper">
+      <a class="main-header__logo" href="index.html" aria-current="page">
+        <img class="main-header__icc" src="img/iconfinder.svg" width="36" height="36" alt="Кошелёк.">
+        <img class="main-header__icon" src="img/bankdash.svg" width="137" height="20" alt="bankDash.">
+      </a>
+      <div class="main-header__info">
+        <h1 class="main-header__title">Dashboard</h1>
+        <div class="main-header__subscribe">
+          <div class="main-header__search search">
+            <form action="#" method="post" autocomplete="off">
+              <div class="search__field">
+                <label>
+                  <input class="search__input" type="search" name="search" placeholder="Search for something">
+                  <img class="search__icon" src="img/search.svg" width="20" height="20" alt="bankDash.">
+                </label>
+              </div>
+              <button class="visually-hidden" type="submit">отправить</button>
+            </form>
+          </div>
+          <button class="main-header__setting">
+            <img src="img/settings.svg" width="25" height="25" alt="setting.">
+          </button>
+          <button class="main-header__not">
+            <img src="img/not.svg" width="25" height="25" alt="not.">
+          </button>
+          <div class="main-header__image">
+            <picture>
+              <!-- <source media="(min-width: 1440px)" srcset="img/christina-morillo.webp 1x, img/christina-morillo-mobile@2x.webp 2x"
+                            type="image/webp">
+                          <source srcset="img/hero/index-can-mobile.webp 1x, img/hero/index-can-mobile@2x.webp 2x" type="image/webp"> -->
+
+              <source media="(min-width: 768px)"
+                srcset="img/christina-morillo.png 1x, img/christina-morillo-mobile@2x.png 2x" width="60" height="60">
+              <img src="img/christina-morillo-mobile.png" srcset="img/christina-morillo-mobile@2x.png 2x" width="35"
+                height="35" alt="Фото.">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__menu main__menu--closed main__menu--nojs">
+      <div class="overlay"></div> <!-- Затемняющий элемент -->
+      <button class="main__button" type="button">
+        <span class="visually-hidden">Открыть меню.</span>
+      </button>
+      <div class="main__wrapper">
+        <ul>
+          <li class="main__item main__item--active">
+            <a href="index.html">Dashboard
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#home"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">Transactions
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#transfer"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#" id="accaunts">Accounts
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#user1"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">Investments
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#economic-investment"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">Credit Cards
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#credit-card"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">Loans
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#loan"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">Services
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#service"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="#">My Privileges
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#econometrics"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="main__item">
+            <a href="setting.html">Setting
+              <span>
+                <svg width="25" height="25" role="img" aria-label="Home">
+                  <use xlink:href="img/sprite.svg#settings-solid"></use>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="js/javascript.min.js"></script>
+</body>
+
+</html>
