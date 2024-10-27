@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: gh-pages
 
 on:
   push:
@@ -8,23 +8,30 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js (если ваш проект использует Node.js)
-        uses: actions/setup-node@v2
+      - name: Check Out
+        uses: actions/checkout@v2.4.0
         with:
-          node-version: '16' # Замените на вашу версию Node.js
+          persist-credentials: false
 
-      - name: Install dependencies
-        run: npm install # Или другой способ установки зависимостей
-
-      - name: Build
-        run: npm run build # Команда для сборки вашего проекта
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          node-version: '16.x'
+
+      - name: Installing Dependencies
+        run: npm ci
+
+      - name: Linting
+        run: npm run lint
+
+      - name: Building
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          folder: ./build
+          branch: gh-pages
