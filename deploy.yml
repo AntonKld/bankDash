@@ -13,9 +13,20 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Убедитесь, что версия Node.js соответствует вашей
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # Путь к папке build в ветке main
+        publish_dir: ./build  # Убедитесь, что это путь к папке, содержащей файлы для деплоя
         publish_branch: gh-pages
